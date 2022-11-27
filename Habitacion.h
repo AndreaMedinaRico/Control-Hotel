@@ -1,6 +1,7 @@
-#include <fstream>
-#include <iostream>
-#include <sstream>
+#ifndef HABITACION_H_
+#define HABITACION_H_
+
+#include "ManejadorArchivo.h"
 
 using namespace std;
 
@@ -10,21 +11,19 @@ class Habitacion {
         int piso;
 
     public:
-        Habitacion(int _numero, int _piso, string _nombreArchivo);
+        Habitacion(){};
+        Habitacion(int _numero, int _piso, ManejadorArchivo _archivo);
         int getNumero();
         int getPiso();
 };
 
-Habitacion::Habitacion(int _numero, int _piso, string _nombreArchivo) {
+Habitacion::Habitacion(int _numero, int _piso, ManejadorArchivo _archivo) {
     numero = _numero;
     piso = _piso;
 
-    ofstream archivo;
-    archivo.open(_nombreArchivo);
-    archivo << "Información de la habitación: " << endl;
-    archivo << "Número: " << numero << endl;
-    archivo << "Piso: " << piso << endl;
-    archivo.close();
+    _archivo.escribir("Información de la habitación: ");
+    _archivo.escribir("Número: " + to_string(numero));
+    _archivo.escribir("Piso: " + to_string(piso));
 };
 
 int Habitacion::getNumero() {
@@ -34,3 +33,5 @@ int Habitacion::getNumero() {
 int Habitacion::getPiso() {
     return piso;
 };
+
+#endif

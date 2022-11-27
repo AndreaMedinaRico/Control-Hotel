@@ -1,0 +1,28 @@
+Información de la habitación: 
+Número: 101
+Piso: 1
+Información de la habitación: 
+Número: 102
+Piso: 1
+Información de la habitación: 
+Número: 103
+Piso: 1
+Información de la habitación: 
+Número: 201
+Piso: 2
+Información del visitante: 
+Nombre: Andrea Medina
+Fecha de entrada: 7 de noviembre
+Fecha de salida: 11 de noviembre
+Información del visitante: 
+Nombre: Carlos López
+Fecha de entrada: 8 de noviembre
+Fecha de salida: 12 de noviembre
+tante: 
+a de salida: 
+nte 
+te 
+ hotel
+00
+El visitante Andrea Medina salió del hotel
+El visitante Andrea Medina ingresó al hotel

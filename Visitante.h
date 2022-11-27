@@ -1,7 +1,8 @@
+#ifndef VISITANTE_H_
+#define VISITANTE_H_
+
 #include "Habitacion.h"
-#include <sstream>
-#include <iostream>
-#include <fstream>
+#include "ManejadorArchivo.h"
 
 using namespace std;
 
@@ -13,36 +14,28 @@ class Visitante {
         Habitacion habitacion;
 
     public:
-        Visitante(string _nombre, string _fechaEntrada, string _fechaSalida, string _nombreArchivo);
-        string setHabitacion(Habitacion _habitacion, string _nombreArchivo);
+        Visitante(string _nombre, string _fechaEntrada, string _fechaSalida, ManejadorArchivo archivo);
+        void setHabitacion(Habitacion _habitacion, ManejadorArchivo archivo);
         string getNombre();
         string getFechaEntrada();
         string getFechaSalida();
 };  
 
-Visitante::Visitante(string _nombre, string _fechaEntrada, string _fechaSalida, string _nombreArchivo) {
+Visitante::Visitante(string _nombre, string _fechaEntrada, string _fechaSalida, ManejadorArchivo archivo) {
     nombre = _nombre;
     fechaEntrada = _fechaEntrada;
     fechaSalida = _fechaSalida;
 
-    ofstream archivo;
-    archivo.open(_nombreArchivo);
-    archivo << "Información del visitante: " << endl;
-    archivo << "Nombre: " << nombre << endl;
-    archivo << "Fecha de entrada: " << fechaEntrada << endl;
-    archivo << "Fecha de salida: " << fechaSalida << endl;
-    archivo << "Habitación: " << habitacion.getNumero() << endl;
-    archivo.close();
+    archivo.escribir("Información del visitante: ");
+    archivo.escribir("Nombre: " + nombre);
+    archivo.escribir("Fecha de entrada: " + fechaEntrada);
+    archivo.escribir("Fecha de salida: " + fechaSalida);
 };
 
-string Visitante::setHabitacion(Habitacion _habitacion, string _nombreArchivo) {
+void Visitante::setHabitacion(Habitacion _habitacion, ManejadorArchivo archivo) {
     habitacion = _habitacion;
-
-    ofstream archivo;
-    archivo.open(_nombreArchivo);
-    archivo << "El visitante " << nombre << " se queda en la habitación" << habitacion.getNumero() 
-    << " del piso" << habitacion.getPiso() << endl;
-    archivo.close();
+    
+    archivo.escribir("Habitación asignada al vistante: " + habitacion.getNumero());
 };
 
 string Visitante::getNombre() {
@@ -56,3 +49,5 @@ string Visitante::getFechaEntrada() {
 string Visitante::getFechaSalida() {
     return fechaSalida;
 };
+
+#endif /* VISITANTE_H_ */

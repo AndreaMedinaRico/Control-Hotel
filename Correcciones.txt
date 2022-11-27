@@ -1,0 +1,65 @@
+ ================================ 1 ================================
+Sub-Competencia: 
+        Toma de decisiones: Utilizo el concepto de herencia en el
+        diagrama de clases de forma adecuada (Avance 2)
+
+Error original: Utilicé flecha con líneas punteadas para indicar
+        la herencia. 
+
+Cambio realizado: Cambié la línea por una recta con triangulo 
+        blanco en la punta y actualicé los cambios. 
+
+Dónde se puede ver el cambio: 
+
+
+================================ 2 ================================
+Sub-Competencia: 
+        Implementa: Codifico métodos y atributos de clase 
+        correctamente (constructores, getters, setters) 
+        (Avance 3)
+
+Error original: Las clases no tenían todos sus setters y getters.
+
+Cambio realizado: Agregué los setters y getters en la clase padre 
+        "Trabajador.h" y los heredé a Limpieza, Recepcionista y
+        Botones
+
+Líneas donde se puede ver el cambio:
+        19 a 24 de "Trabajador.h"
+
+
+================================ 3 ================================
+Sub-Competencia:
+        Implementa: Implemento herencia de manera correcta y útil
+        (Avance 3)
+
+Error original: No había implementado herencia
+
+Cambio realizado: La clase "Trabajador.h" es la clase padre y 
+        "Limpieza.h", "Recepcionista.h" y "Botones.h" heredan 
+        sus métodos y atributos. 
+
+Líneas donde se puede ver el cambio:
+        "Limpieza.h": Líneas 5, 9 y 19
+        "Recepcionista.h": Líneas 5, 9 y 16
+        "Botones.h": Líneas 5, 9 y 19
+
+================================ 4 ================================
+Sub-Competencia:
+        Implementa: Implemento clases apegadas a requerimientos 
+        a partir de un módelo (Avance 3)
+
+Error original: No se guardaba de forma correcta la información en 
+        los archivos.
+
+Cambio realizado: Creé una clase "ManejadorArchivo.h" con el 
+        método de escribir.
+
+Líneas donde se puede ver el cambio:
+        Toda la clase "ManejadorArchivo.h"
+        "Botones.h": líneas 14, 19 a 23, 26, 29, 32, 33
+        "Habitacion.h": líneas 15, 20, 24 a 26
+        "Limpieza.h": líneas 14 a 16, 19 a 23, 26, 28, 31, 32
+        "Recepcionista.h": líneas 11 a 13, 16 a 20, 23, 24, 27, 28
+        "Visitante.h": líneas 17, 18, 24, 29 a 32, 35, 38
+        "Trabajador.h": líneas 18, 24, 29 a 32, 
